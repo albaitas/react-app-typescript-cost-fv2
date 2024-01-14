@@ -1,38 +1,195 @@
-.App {
+/* CostsForm */
+.new-cost__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+.new-cost__control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.new-cost__control input {
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 20rem;
+  max-width: 100%;
+}
+.new-cost__actions {
+  text-align: left;
+}
+
+/* NewCost */
+.new-cost {
+  background-color: #aac4d1;
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 70rem;
+  max-width: 95%;
+  text-align: center;
+}
+.new-cost button {
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid #2a5b84;
+  background-color: #2a5b84;
+  color: #fefae1;
+  border-radius: 10px;
+  margin-right: 3px;
+}
+
+.new-cost button:hover,
+.new-cost button:active {
+  background-color: #2a5c84b2;
+  border-color: #2a5c84b2;
+}
+/* CostsItem */
+.cost-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  background-color: #bd8025;
+}
+.cost-item__description {
+  text-align: center;
+}
+.cost-item h2 {
+  color: #3a3a3a;
+  font-size: 1rem;
+  flex: 1;
+  margin: 0 1rem;
+  color: #fefae1;
+}
+.cost-item__price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fefae1;
+  background-color: #2a5b84;
+  border: 1px solid white;
+  padding: 0.5rem;
+  border-radius: 12px;
+}
+@media (min-width: 580px) {
+  .cost-item__description {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+  }
+  .cost-item__description h2 {
+    font-size: 1.25rem;
+  }
+  .cost-item__price {
+    font-size: 1.25rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+/* CostsDate */
+.cost-date {
+  display: flex;
+  flex-direction: column;
+  width: 5.5rem;
+  height: 5.5rem;
+  border: 1px solid #ececec;
+  background-color: #2a5b84;
+  color: #fefae1;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+}
+.cost-date__month {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+.cost-date__year {
+  font-size: 0.75rem;
+}
+.cost-date__day {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* CostsList */
+.cost-list {
+  list-style: none;
+  padding: 0;
+}
+.cost-list__fallback {
+  color: #fefae1;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* CostsFilter */
+.costs {
+  padding: 1rem;
+  background-color: #aac4d1;
+  margin: 2rem auto;
+  width: 70rem;
+  max-width: 95%;
+}
+.costs-filter {
+  color: white;
+  padding: 0 1rem;
+}
+.costs-filter__control {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+.costs-filter label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.costs-filter select {
+  font: inherit;
+  padding: 0.5rem 3rem;
+  font-weight: bold;
+  border-radius: 6px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.diagram {
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #ebc137;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  height: 10rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.diagram-bar {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.diagram-bar__inner {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #313131;
+  border-radius: 12px;
+  background-color: #fefae1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.diagram-bar__fill {
+  background-color: #bd8025;
+  width: 100%;
+  transition: all 0.3s ease-out;
+}
+.diagram-bar__label {
+  font-weight: bold;
+  font-size: 0.5rem;
+  text-align: center;
 }
